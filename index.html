@@ -3,109 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>BldgBit.com</title>
+  <title>BldgBit.com - Exclusive</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
   <style>
-    /* General Styles */
+    /* Reset */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+      color: #fff;
+      background: #000; /* fallback if image doesn’t load */
+    }
+
+    /* Background image + overlay */
     body {
-      font-family: 'Playfair Display', 'Lato', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      background: url('BK.webp') no-repeat center center fixed;
+      background: url("BK.webp") no-repeat center center;
       background-size: cover;
-      line-height: 1.8;
+      background-attachment: fixed; /* Subtle parallax effect */
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6); /* Dark overlay to enhance contrast */
+      z-index: -1;
+    }
+
+    /* Hero container */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-    }
-    h1, h2, p {
-      margin: 0;
-      padding: 0;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-      font-weight: bold;
+      min-height: 100vh; /* Fills the viewport */
+      padding: 1rem;
     }
 
-    /* Header */
-    header {
-      margin-top: 50px;
-      padding: 50px 20px;
-      background: rgba(255, 255, 255, 0.8);
+    /* Combined Logo and Text Bubble */
+    .bubble {
+      position: relative;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      padding: 2.5rem;
+      border-radius: 1rem;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     }
-    header img {
-      max-width: 150px;
-      margin-bottom: 20px;
+
+    /* Logo box with gradient */
+    .logo-container {
+      position: relative;
+      margin-bottom: 1rem;
+      width: 180px;
+      height: 180px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+      border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 1.5rem auto;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     }
-    header h1 {
-      font-size: 1.8rem;
-      font-weight: bold;
-      letter-spacing: 0.1em;
+
+    /* Logo */
+    .logo {
+      width: 150px;
+      height: auto;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Tagline */
+    .bubble h2 {
+      font-family: 'Playfair Display', serif; /* Elegant logo-style font */
+      font-size: 1.2rem; /* Reduced size */
+      font-weight: 500;
       text-transform: uppercase;
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #555;
-      margin-top: 10px;
+      letter-spacing: 0.05rem;
+      margin-bottom: 1.5rem;
     }
 
-    /* Main Content */
-    .main-content {
-      padding: 40px 20px;
-      background: rgba(255, 255, 255, 0.9);
+    /* Info blocks */
+    .info-block {
+      margin-top: 1.2rem;
     }
-    .main-content p {
+    .info-block h3 {
+      font-family: 'Playfair Display', serif;
       font-size: 1rem;
-      color: #555;
-      margin: 20px 0;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
     }
-    .main-content .highlight {
-      font-weight: bold;
-      color: #000;
-    }
-    .main-content .exclusive {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #333;
-      margin: 40px 0 20px;
-    }
-    .main-content .exclusive.large {
-      font-size: 1.8rem;
+    .info-block p {
+      font-size: 0.85rem;
+      line-height: 1.4;
     }
 
-    /* Footer */
+    /* Footer for disclaimers */
     footer {
-      margin-top: 50px;
-      padding: 20px 0;
-      font-size: 0.9rem;
-      background-color: rgba(255, 255, 255, 0.8);
-      color: #777;
+      text-align: center;
+      padding: 0.7rem 1rem;
+      font-size: 0.75rem;
+      color: #ccc;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(3px);
     }
+    footer p {
+      margin: 0.3rem 0;
+    }
+
   </style>
 </head>
 <body>
 
-<header>
-  <img src="LG.png" alt="BldgBit.com Logo">
-  <h1>Efficient. Transparent. Investor-Exclusive.</h1>
-  <p>We design and build for the best, and only the best.</p>
-</header>
+  <div class="hero">
+    <div class="bubble">
+      <div class="logo-container">
+        <!-- Logo -->
+        <img src="LG.png" alt="BldgBit.com Logo" class="logo">
+      </div>
+      
+      <h2>EFFICIENT. TRANSPARENT. INVESTOR-EXCLUSIVE.</h2>
 
-<div class="main-content">
-  <p>At <span class="highlight">BldgBit.com</span>, we don’t just design projects; we craft efficient, cash-flow-positive investments.</p>
-  <p>Over the past decade:</p>
-  <p><span class="highlight">10,000+</span> units designed and built</p>
-  <p><span class="highlight">100+</span> buildings remodeled with 500+ units</p>
-  <p><span class="highlight">100+</span> ADUs crafted for maximum ROI</p>
-  <p class="exclusive large">BldgBit.com is member-only.</p>
-  <p class="exclusive">We’re not for everyone.</p>
-  <p>We work exclusively with a small, trusted circle of real estate investors and developers. If you’re here, it’s because someone in our network thought you were ready to join the best.</p>
-  <p><strong>We don’t accept inquiries or new clients without a direct referral from our existing members.</strong></p>
-</div>
+      <div class="info-block">
+        <h3>WHAT WE DO</h3>
+        <p>We design and build efficient, cash-flow-positive projects.<br>
+           Our focus is on fast approvals and construction-friendly designs.</p>
+      </div>
 
-<footer>
-  <p>© 2024 BldgBit.com | All Rights Reserved</p>
-</footer>
+      <div class="info-block">
+        <h3>EXCLUSIVITY</h3>
+        <p>We work exclusively with trusted real estate investors and developers.<br>
+           Access is by invitation only for those ready to maximize ROI.</p>
+      </div>
 
+      <div class="info-block">
+        <h3>OUR EXPERIENCE</h3>
+        <p>10,000+ units designed. 500+ remodels completed.<br>
+           100+ ADUs crafted for maximum efficiency.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2024 BldgBit.com | All Rights Reserved</p>
+    <p>BldgBit.com complies with ADA and CCPA standards<br>
+       and meets WCAG 2.1 accessibility requirements.</p>
+  </footer>
+  
 </body>
 </html>
