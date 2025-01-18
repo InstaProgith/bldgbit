@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>BldgBit.com - Exclusive</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans:wght@300&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
     /* Reset */
     * {
-      margin: 0; 
-      padding: 0; 
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
@@ -22,21 +25,21 @@
       height: 100%;
       font-family: 'Open Sans', sans-serif;
       color: #fff;
-      background: #000; /* fallback if image doesn’t load */
+      background: #000;
     }
 
-    /* Background image + overlay */
+    /* Background + overlay */
     body {
       background: url("BK.webp") no-repeat center center;
       background-size: cover;
-      background-attachment: fixed; /* Subtle parallax effect */
+      background-attachment: fixed;
       position: relative;
     }
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6); /* Dark overlay to enhance contrast */
+      background: rgba(0,0,0,0.6);
       z-index: -1;
     }
 
@@ -45,121 +48,187 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      min-height: 100vh; /* Fills the viewport */
+      min-height: 100vh;
       padding: 1rem;
+      text-align: center;
     }
 
-    /* Combined Logo and Text Bubble */
+    /* Main bubble container */
     .bubble {
-      position: relative;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0,0,0,0.5);
       backdrop-filter: blur(8px);
-      padding: 2.5rem;
+      padding: 2rem;
       border-radius: 1rem;
-      max-width: 600px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      max-width: 900px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
     }
 
-    /* Logo box with gradient */
+    /* Logo box */
     .logo-container {
-      position: relative;
-      margin-bottom: 1rem;
-      width: 180px;
-      height: 180px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+      margin: 0 auto 1rem;
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2));
       border-radius: 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0 auto 1.5rem auto;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 20px rgba(255,255,255,0.6);
     }
-
-    /* Logo */
     .logo {
-      width: 150px;
+      width: 110px;
       height: auto;
-      z-index: 1;
-      position: relative;
     }
 
     /* Tagline */
     .bubble h2 {
-      font-family: 'Playfair Display', serif; /* Elegant logo-style font */
-      font-size: 1.2rem; /* Reduced size */
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Info blocks */
-    .info-block {
-      margin-top: 1.2rem;
-    }
-    .info-block h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
       font-weight: 500;
-      margin-bottom: 0.4rem;
-    }
-    .info-block p {
-      font-size: 0.85rem;
-      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0.04rem;
+      margin-bottom: 1.5rem;
     }
 
-    /* Footer for disclaimers */
+    /* Two-column layout */
+    .bubble-content {
+      column-count: 2;
+      column-gap: 2.5rem;
+      text-align: left;
+    }
+    .info-block {
+      break-inside: avoid;
+      margin-bottom: 1.3rem;
+    }
+    .info-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .info-block p,
+    .info-block ul {
+      font-size: 0.78rem;
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+    .info-block ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .info-block li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Responsive fallback */
+    @media (max-width: 800px) {
+      .bubble-content {
+        column-count: 1;
+      }
+      .info-block {
+        text-align: center;
+      }
+    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 0.7rem 1rem;
-      font-size: 0.75rem;
+      padding: 0.6rem 1rem;
+      font-size: 0.7rem;
       color: #ccc;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0,0,0,0.4);
       backdrop-filter: blur(3px);
     }
     footer p {
-      margin: 0.3rem 0;
+      margin: 0.2rem 0;
     }
-
   </style>
 </head>
 <body>
 
   <div class="hero">
     <div class="bubble">
+      <!-- Logo -->
       <div class="logo-container">
-        <!-- Logo -->
         <img src="LG.png" alt="BldgBit.com Logo" class="logo">
       </div>
-      
-      <h2>EFFICIENT. TRANSPARENT. INVESTOR-EXCLUSIVE.</h2>
 
-      <div class="info-block">
-        <h3>WHAT WE DO</h3>
-        <p>We design and build efficient, cash-flow-positive projects.<br>
-           Our focus is on fast approvals and construction-friendly designs.</p>
-      </div>
+      <h2>Efficient. Transparent. Investor-Exclusive.</h2>
 
-      <div class="info-block">
-        <h3>EXCLUSIVITY</h3>
-        <p>We work exclusively with trusted real estate investors and developers.<br>
-           Access is by invitation only for those ready to maximize ROI.</p>
-      </div>
+      <div class="bubble-content">
+        
+        <!-- LEFT COLUMN -->
+        <div class="info-block">
+          <h3>Our Purpose</h3>
+          <p>
+            We develop high-impact real estate ventures for a select group of investors.
+            By integrating every phase—design, approvals, and construction—we streamline
+            timelines and unlock better returns.
+          </p>
+        </div>
 
-      <div class="info-block">
-        <h3>OUR EXPERIENCE</h3>
-        <p>10,000+ units designed. 500+ remodels completed.<br>
-           100+ ADUs crafted for maximum efficiency.</p>
-      </div>
-    </div>
-  </div>
+        <div class="info-block">
+          <h3>Who We Serve</h3>
+          <p>
+            Our circle is small but high-powered: we typically maintain a one-million-dollar
+            pipeline with each partner across multiple projects. This selective model
+            ensures focus on larger, high-value engagements.
+          </p>
+        </div>
 
+        <div class="info-block">
+          <h3>Track Record</h3>
+          <ul>
+            <li>10,000+ newly constructed units</li>
+            <li>500+ apartment overhauls</li>
+            <li>300+ ADUs added</li>
+            <li>Active partnerships with top private investors</li>
+          </ul>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="info-block">
+          <h3>Project Scale</h3>
+          <p>
+            Minimum individual budgets start at 300K for construction and 35K for design
+            (only if we also build). By targeting projects where our integrated approach
+            truly pays off, we deliver genuine cost savings.
+          </p>
+        </div>
+
+        <div class="info-block">
+          <h3>Execution</h3>
+          <p>
+            Our in-house architecture and engineering teams employ BIM automation,
+            advanced 3D scanning, and proprietary management software. This combination
+            slashes waste, shortens build times, and ensures each plan is approval-ready
+            without guesswork.
+          </p>
+        </div>
+
+        <div class="info-block">
+          <h3>ROI Edge</h3>
+          <ul>
+            <li>Permit-ready plans in weeks, streamlining approvals</li>
+            <li>Up to 30 percent cost reduction through synergy and scale</li>
+            <li>Exclusive supplier pricing delivers additional savings</li>
+            <li>Turnkey oversight, allowing investors to stay hands-off from day one</li>
+          </ul>
+        </div>
+
+      </div><!-- .bubble-content -->
+    </div><!-- .bubble -->
+  </div><!-- .hero -->
+
+  <!-- Footer -->
   <footer>
     <p>© 2024 BldgBit.com | All Rights Reserved</p>
-    <p>BldgBit.com complies with ADA and CCPA standards<br>
-       and meets WCAG 2.1 accessibility requirements.</p>
+    <p>
+      BldgBit.com complies with ADA and CCPA standards<br>
+      and meets WCAG 2.1 accessibility requirements.
+    </p>
   </footer>
-  
+
 </body>
 </html>
