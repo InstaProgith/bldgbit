@@ -32,7 +32,7 @@
     body {
       background: url("BK.webp") no-repeat center center;
       background-size: cover;
-      background-attachment: fixed;
+      background-attachment: fixed; /* Fixed on desktop */
       position: relative;
     }
     body::before {
@@ -128,6 +128,10 @@
       }
       .info-block {
         text-align: center;
+      }
+      /* Switch background-attachment to scroll on mobile */
+      body {
+        background-attachment: scroll;
       }
     }
 
